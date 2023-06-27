@@ -1,0 +1,21 @@
+html {
+    box-sizing: border-box;
+}
+
+.main-container {
+    width: 960px;
+    border-color: blue;
+    background-color: yellow;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.square {
+    background-color: black;
+    flex-grow: 1;
+    flex-shrink: 1;
+    border-color: white;
+    border-width: 3px;
+    border-style: solid;
+
+}
