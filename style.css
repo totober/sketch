@@ -2,10 +2,9 @@ html {
     box-sizing: border-box;
 }
 
-.main-container {
+#main-container {
     width: 960px;
     /* height: 960px; */
-    border-color: blue;
     background-color: yellow;
     display: flex;
     flex-wrap: wrap;

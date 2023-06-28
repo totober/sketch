@@ -1,13 +1,14 @@
-let mainDiv = document.createElement("div");
-mainDiv.className = "main-container";
-document.body.appendChild(mainDiv);
+// let mainDiv = document.createElement("div");
+// mainDiv.className = "main-container";
+// document.body.appendChild(mainDiv);
+
+let mainDiv = document.getElementById("main-container");
 
 let btn = document.createElement("button");
 btn.className = "btn";
 btn.textContent = "Change layout"
 btn.addEventListener("click", inputOf);
 btn.addEventListener("click", createSquare);
-//btn.addEventListener("click", reset);
 document.body.insertBefore(btn, mainDiv);
 
 
@@ -20,12 +21,6 @@ function inputOf (e) {
     // if (input === 0 || "") {
     //     input = 16
     // }
-setTimeout(reset, 3000);
-
-function reset () {
-
-       
-}
     return input
 }
 
