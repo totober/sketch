@@ -4,26 +4,49 @@
 
 let mainDiv = document.getElementById("main-container");
 
-let btn = document.createElement("button");
+// let btn = document.createElement("button");
+// btn.className = "btn";
+// btn.textContent = "Change layout"
+// btn.addEventListener("click", inputOf);
+// btn.addEventListener("click", createSquare);
+// document.body.insertBefore(btn, mainDiv);
+
+let btn = document.createElement("input");
 btn.className = "btn";
-btn.textContent = "Change layout"
+btn.setAttribute("type", "button");
+btn.setAttribute("value","Change Layout");
 btn.addEventListener("click", inputOf);
 btn.addEventListener("click", createSquare);
+//btn.addEventListener("click", restart);
 document.body.insertBefore(btn, mainDiv);
 
 
-
 function inputOf (e) {
-  
-    let inputUser = prompt("choose the quantity of squares per side", "16");  
-   let input = Number(inputUser);
 
-    // if (input === 0 || "") {
-    //     input = 16
-    // }
+    let input = 16;
+
+    if ( btn.value === "Change Layout") {
+        btn.value = "changed!";
+     } else {
+        btn.value = "Change Layout"
+        let inputUser = prompt("choose the quantity of squares per side", "16");  
+        input = Number(inputUser);
+     }
+  
+
+   
+
+
+
     return input
 }
 
+
+/* setTimeout(restart, 3000);
+
+function restart () {
+    input.reset();
+} */
 
 
 
