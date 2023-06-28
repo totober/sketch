@@ -7,20 +7,28 @@ btn.className = "btn";
 btn.textContent = "Change layout"
 btn.addEventListener("click", inputOf);
 btn.addEventListener("click", createSquare);
+//btn.addEventListener("click", reset);
 document.body.insertBefore(btn, mainDiv);
 
 
-function inputOf (e) {
 
+function inputOf (e) {
+  
     let inputUser = prompt("choose the quantity of squares per side", "16");  
-    let input = Number(inputUser);
+   let input = Number(inputUser);
 
     // if (input === 0 || "") {
     //     input = 16
     // }
+setTimeout(reset, 3000);
 
+function reset () {
+
+       
+}
     return input
 }
+
 
 
 
@@ -37,7 +45,7 @@ function sizeOf() {
 
 let size = sizeOf();
 
-setTimeout(createSquare, 4000);
+setTimeout(createSquare, 1000);
 
 function createSquare() {
 
