@@ -7,7 +7,7 @@ html {
     /* height: 960px; */
     background-color: yellow;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap; 
 }
 
 .square {
