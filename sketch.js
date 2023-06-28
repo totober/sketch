@@ -9,11 +9,20 @@ btn.addEventListener("click", inputOf);
 btn.addEventListener("click", createSquare);
 document.body.insertBefore(btn, mainDiv);
 
+
 function inputOf (e) {
-    
-    let input = Number(prompt("choose the quantity of squares per side"));
+
+    let inputUser = prompt("choose the quantity of squares per side", "16");  
+    let input = Number(inputUser);
+
+    // if (input === 0 || "") {
+    //     input = 16
+    // }
+
     return input
 }
+
+
 
 let inputSelected = inputOf();
 console.log(inputSelected)
@@ -28,19 +37,35 @@ function sizeOf() {
 
 let size = sizeOf();
 
-
+setTimeout(createSquare, 4000);
 
 function createSquare() {
 
-for (i = 0; i < gridSize; i++){
-  let square = document.createElement("div");
+for (let i = 0; i < gridSize; i++){
+
+let square = document.createElement("div");
 square.className = "square";
 square.style.height = `${size}px`;
 square.style.width = `${size}px`;
-mainDiv.appendChild(square)  
-}
+mainDiv.appendChild(square)
+
+} 
 
 }
+
+
+
+/* function createSquare() {
+
+    for (let i = gridSize; i > 0; i--){
+      let square = document.createElement("div");
+    square.className = "square";
+    square.style.height = `${size}px`;
+    square.style.width = `${size}px`;
+    mainDiv.appendChild(square)  
+    } */
+
+
 
 
 
