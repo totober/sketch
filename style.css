@@ -2,18 +2,32 @@
 .main-container {
     width: 960px;
     /* height: 960px; */
-    background-color: yellow;
+    /*background-color: pink;*/
     display: flex;
     flex-wrap: wrap; 
 }
 
 .square {
-    background-color: black;
+    background-color: #F4F6F7 ;
     /* flex-grow: 0;
     flex-shrink: 1; */
-    border-color: white;
-    border-width: 3px;
+    border-color: #D5D8DC ;
+    border-width: 1px;
     border-style: solid;
     box-sizing: border-box;
 
 }
+
+input:hover {
+
+    background-color: yellow;
+    border-width: 3px;
+
+}
+
+/* .hovered {
+    background-color: blueviolet;
+/*     esta buenisima la idea del radius para hacerlo redondito al trazo, pero tira fallos, me pone toda 
+    la pantalla del color, no se porque.
+    border-radius: 4px; 
+} */

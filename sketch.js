@@ -1,6 +1,26 @@
  let mainDiv = document.createElement("div");
  mainDiv.className = "main-container";
+ // uso mouseover porque este evento tiene bubbleup, lo cual me permite hacer event delegation,
+ // que es colocar un solo listener en el elemento padre.
+
+ //en este caso, agregue el color directamente al elemento:
+ //mainDiv.addEventListener("mouseover", (e) => e.target.style.backgroundColor = "gold");
+ // en este otro, agregue una clase, lo cual es mejor porque puedo hacer mas ediciones en css:
+ //mainDiv.addEventListener("mouseover", (e) => e.target.className = "hovered");
+
+ mainDiv.addEventListener("mouseover", colors);
+
  document.body.appendChild(mainDiv);
+
+
+function colors (e) {
+    e.target.className = "hovered";
+    let x = e.offsetX;
+    let y = e.offsetY;
+    e.target.style.backgroundColor = `rgb (${x},${y},${x - y})`;
+}
+
+
 
 
 let btn = document.createElement("input");
@@ -9,6 +29,19 @@ btn.setAttribute("type", "button");
 btn.setAttribute("value","Change Layout");
 btn.addEventListener("click", createSquare);
 document.body.insertBefore(btn, mainDiv);
+
+/* // aca intento hacer lo mismo que arriba, pero sin un event delegation, sino que coloco uno por uno los 
+//listeners del node collection de .squares, por eso el forEach.
+//en el test funciona, pero aca no.. nose porque.
+
+let squareColor = document.querySelectorAll(".square");
+squareColor.forEach(square => square.addEventListener("mouseenter", (e) => e.target.style.backgroundColor = "gold" ));
+
+
+// aca esta la named function, que podria usar en lugar de la arrow:
+// function colors (e) {
+//     e.target.style.backgroundColor = "gold";
+// }  */
 
 
 window.addEventListener("load", load);
@@ -71,12 +104,14 @@ for (let i = 0; i < gridSize; i++){
 
 let square = document.createElement("div");
 square.className = "square";
+// aca intento hacer lo mismo que arriba, pero sin exito.. no se porque no funciona, en el test no hay problemas.
+//square.addEventListener("mouseenter", (e) => e.target.style.backgroundColor= "gold");
 square.style.height = `${size}px`;
 square.style.width = `${size}px`;
+
 mainDiv.appendChild(square)
 
 }
-
 
 }
 
