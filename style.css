@@ -1,8 +1,5 @@
-html {
-    box-sizing: border-box;
-}
 
-#main-container {
+.main-container {
     width: 960px;
     /* height: 960px; */
     background-color: yellow;

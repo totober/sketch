@@ -1,49 +1,33 @@
-// let mainDiv = document.createElement("div");
-// mainDiv.className = "main-container";
-// document.body.appendChild(mainDiv);
+ let mainDiv = document.createElement("div");
+ mainDiv.className = "main-container";
+ document.body.appendChild(mainDiv);
 
-let mainDiv = document.getElementById("main-container");
 
-// let btn = document.createElement("button");
-// btn.className = "btn";
-// btn.textContent = "Change layout"
-// btn.addEventListener("click", inputOf);
-// btn.addEventListener("click", createSquare);
-// document.body.insertBefore(btn, mainDiv);
-
-/* let btn = document.createElement("input");
+let btn = document.createElement("input");
 btn.className = "btn";
 btn.setAttribute("type", "button");
 btn.setAttribute("value","Change Layout");
-btn.addEventListener("click", inputOf);
 btn.addEventListener("click", createSquare);
-//btn.addEventListener("click", restart);
-document.body.insertBefore(btn, mainDiv); */
+document.body.insertBefore(btn, mainDiv);
 
-let btn = document.querySelector("input")
-btn.addEventListener("click", createSquare);
-
-// let clear = document.querySelector("button");
-// clear.addEventListener("click", clearWindow);
 
 window.addEventListener("load", load);
 
 
-/* function inputOf (e) {
 
-    let input = 16;
+function load () {
 
-    if ( btn.value === "Change Layout") {
-        btn.value = "changed!";
-     } else {
-        btn.value = "Change Layout"
-        let inputUser = prompt("choose the quantity of squares per side", "16");  
-        input = Number(inputUser);
-     }
+    
+    for (let i = 0; i < 256; i++){
 
-    return input
-} */
-
+        let square = document.createElement("div");
+        square.className = "square";
+        square.style.height = `${60}px`;
+        square.style.width = `${60}px`;
+        mainDiv.appendChild(square)
+        
+        }
+}
 
 
 
@@ -55,7 +39,7 @@ function createSquare() {
       function inputOf () {
        
                 let inputUser = Number(prompt("choose the quantity of squares per side"));  
-               let input = 0;
+                let input = 0;
 
                if (inputUser > 100){
                 
@@ -94,28 +78,20 @@ mainDiv.appendChild(square)
 }
 
 
-
-
-}
-
-
-
-function load () {
-
-    
-    for (let i = 0; i < 256; i++){
-
-        let square = document.createElement("div");
-        square.className = "square";
-        square.style.height = `${60}px`;
-        square.style.width = `${60}px`;
-        mainDiv.appendChild(square)
-        
-        }
 }
 
 
 
 
+
+
+
+/*
+    if ( btn.value === "Change Layout") {
+        btn.value = "changed!";
+     } else {
+        btn.value = "Change Layout"
+     }
+      */
 
 
