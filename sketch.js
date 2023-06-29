@@ -1,24 +1,47 @@
  let mainDiv = document.createElement("div");
  mainDiv.className = "main-container";
+
+
  // uso mouseover porque este evento tiene bubbleup, lo cual me permite hacer event delegation,
  // que es colocar un solo listener en el elemento padre.
 
  //en este caso, agregue el color directamente al elemento:
  //mainDiv.addEventListener("mouseover", (e) => e.target.style.backgroundColor = "gold");
  // en este otro, agregue una clase, lo cual es mejor porque puedo hacer mas ediciones en css:
- //mainDiv.addEventListener("mouseover", (e) => e.target.className = "hovered");
-
- mainDiv.addEventListener("mouseover", colors);
+ mainDiv.addEventListener("mouseover", (e) => e.target.className = "hovered");
 
  document.body.appendChild(mainDiv);
 
 
+
+//ACA intente agregarle el SHADOW con cada pasada, lamentablemente no lo puedo probar.
+// la pc se traba completamente, evidentemente no le da para procesar esto jaja, que hdp.
+
+/* function colors (e) {
+    e.target.style.backgroundColor = "gold";
+    
+    let bright =  0.9;
+
+     while (bright < 10) {
+            bright -= 0.1;
+         }
+   e.target.style.filter = `brightness(${bright})`;
+ }  */
+
+
+
+
+// aca intente hacer que cambie de color en relacion al movimiento del mouse, pero no pude.
+// tampoco lo pude hacer funcionar en el test, incluso COPIANDO EXACTAMENTE lo que hizo el chabon
+// en el video, asique no se. RARISIMO.
+
+/* mainDiv.addEventListener("mouseover", colors);
 function colors (e) {
     e.target.className = "hovered";
-    let x = e.offsetX;
-    let y = e.offsetY;
-    e.target.style.backgroundColor = `rgb (${x},${y},${x - y})`;
-}
+    let x = e.clientX;
+    let y = e.clientY;
+    e.target.style.backgroundColor = `rgb (${x},${y},${(x + y) / 10})`;
+}  */
 
 
 
